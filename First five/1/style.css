@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+body {
+    margin: 0; /* Remove default margin */
+    padding: 64px;
+    font-family: 'Avenir', sans-serif; /* Use custom font */
+}
+/* Hero section styles */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 300px; /* Add horizontal padding */ 
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+    color: #252525;
+    font-size: 64px;
+    line-height: 80px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 26px;
+    font-weight: 400; 
+    color: #252525;
+    opacity: 0.8; 
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: 400; 
+    background-color: #252525;
+    color: #f9f9f9;
+    border: none;
+    border-radius: 10px;
+    padding: 9px 28px;
+    cursor: pointer;
+}
+/* Gallery section styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);/* Create 4 columns */ 
+    justify-content: center;
+    align-content: center;
+    gap: 16px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.gallery img {
+    width: 316px;
+    height: 288px;
+    object-fit: cover; /* Maintain aspect ratio */
+}
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Responsive design */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 0 100px; /* Reduce padding for medium screens */
+    }
+    .gallery img {
+        width: 250px; /* Adjust image size */
+        height: 200px;
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 50px; /* Further reduce padding for smaller screens */
+    }
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Reduce columns to 2 */
+    }
+}
+@media (max-width: 480px) {
+    .hero {
+        padding: 0 20px; /* Minimal padding for very small screens */
+    }
+    .gallery {
+        grid-template-columns: 1fr; /* Stack images vertically */
+    }
+    .gallery img {
+        width: 100%; /* Make images full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
