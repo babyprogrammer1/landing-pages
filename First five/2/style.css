@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 64px;
+    font-family: 'Avenir', sans-serif;
+}
+
+.hero-container {
+    display: flex; /* Align hero section and top images side by side */
+    gap: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 600px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 46px;
+    line-height: 80px;
+    color: #252525;
+    margin-bottom: 5px;
+}
+
+.hero p {
+    font-size: 26px;
+    margin-top: 1px;
+    font-weight: 400;
+    color: #252525;
+    opacity: 0.8;
+}
+
+.btn {
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #252525;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 16px;
+    padding: 12px 24px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    opacity: 1;
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.btn:hover {
+    opacity: 0.5; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.top-images {
+    display: flex;
+    flex-direction: row; /* Align images horizontally */
+    margin-top: 10px;
+    gap: 35px;
+}
+
+.top-images img {
+    width: 408px;
+    height: 480px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.top-images img:first-child {
+    transform: translate(20px, -30px); /* Move the first image slightly to the right and up */
+}
+
+.top-images img:last-child {
+    transform: translate(20px, 80px); /* Move the second image slightly to the right and down */
+}
+
+.bottom-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+    gap: 20px;
+    justify-content: center;
+    align-content: center;
+    margin: 40px 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.bottom-images img {
+    width: 412px;
+    height: 379px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.image-label {
+    color: #252525; /* White text color */
+    font-size: 40px;
+    font-weight: heavy;
+    opacity: 0.25;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        padding: 0 50px; /* Further reduce padding for medium screens */
+    }
+
+    .gallery img {
+        width: 250px;
+        /* Adjust image size */
+        height: 200px;
+    }
+
+    .top-images img {
+        width: 300px; /* Reduce image size */
+        height: 350px;
+    }
+
+    .bottom-images img {
+        width: 300px; /* Reduce image size */
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Stack hero and images vertically on smaller screens */
+        align-items: center;
+    }
+    .hero {
+        padding: 20px;
+        text-align: center; /* Center-align text for smaller screens */
+    }
+
+    .top-images {
+        display: none; /* Hide the top images on smaller screens */
+    }
+
+    .bottom-images img {
+        width: 250px; /* Further reduce image size */
+        height: 200px;
+    }
+
+    .bottom-images {
+        grid-template-columns: 1fr; /* Stack bottom images vertically */
+        padding: 0 20px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        /* Reduce columns to 2 */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 10px; /* Minimal padding for very small screens */
+    }
+
+    .btn {
+        font-size: 16px; /* Adjust button font size */
+        padding: 10px 20px; /* Adjust button padding */
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        /* Stack images vertically */
+    }
+
+    .gallery img {
+        width: 100%;
+        /* Make images full width */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+
+    .top-images img {
+        display: none; /* Hide the top images on very small screens */
+    }
+
+    .bottom-images img {
+        width: 200px; /* Further reduce image size */
+        height: 150px;
+    }
+}

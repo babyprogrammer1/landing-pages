@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Avenir', sans-serif;
+    padding: 64px;
+}
+
+/* Hero section styles */
+.hero {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+    color: #252525;
+    font-size: 80px;
+    font-weight: 400px;
+    line-height: 108px;
+    margin-bottom: 20px;
+}
+
+/* Features section styles */
+.features {
+    display: flex;
+    gap: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 24px;
+}
+
+.feature h2 {
+    font-size: 32px;
+    color: #252525;
+    font-weight: heavy;
+    opacity: 0.55;
+}
+
+.feature p {
+    font-size: 20px;
+    color: #252525;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .features {
+        flex-direction: column; /* Stack features vertically */
+        gap: 40px; /* Increase gap for better spacing */
+    }
+
+    .feature img {
+        width: 100%; /* Ensure images scale within the container */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .hero h1 {
+        font-size: 60px; /* Reduce font size for medium screens */
+        line-height: 80px; /* Adjust line height */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        text-align: center; /* Center-align hero text */
+        margin-bottom: 20px; /* Reduce margin */
+    }
+
+    .hero h1 {
+        font-size: 40px; /* Further reduce font size */
+        line-height: 60px; /* Adjust line height */
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .features {
+        gap: 20px; /* Reduce gap between features */
+    }
+
+    .feature img {
+        width: 100%; /* Ensure images scale within the viewport */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .feature h2 {
+        font-size: 24px; /* Reduce heading size */
+    }
+
+    .feature p {
+        font-size: 16px; /* Reduce paragraph size */
+    }
+
+    .feature img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px; /* Further reduce font size for small screens */
+        line-height: 40px; /* Adjust line height */
+    }
+
+    .features {
+        gap: 16px; /* Reduce gap for smaller screens */
+    }
+
+    .feature h2 {
+        font-size: 20px; /* Further reduce heading size */
+    }
+
+    .feature p {
+        font-size: 14px; /* Further reduce paragraph size */
+    }
+
+    .feature img {
+        width: 100%; /* Ensure images scale within the viewport */
+        height: auto; /* Maintain aspect ratio */
+    }
+}

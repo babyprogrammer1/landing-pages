@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Avenir', sans-serif;
+    color: #252525;
+    padding: 60px 60px 0 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.image img {
+    max-width: 100%;
+    width: 650px;
+    object-fit: cover;
+}
+
+.content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 80px;
+}
+
+.hero {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 70px;
+}
+
+.hero h1 {
+    color: #252525;
+    font-size: 50px;
+    line-height: 70px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 24px;
+    font-weight: 400;
+    color: #252525;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.hero button {
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #252525;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero button:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #252525;
+    opacity: 0.8;
+}
+
+.cards .card1 h2, .cards .card2 h2 {
+    font-size: 32px;
+    font-weight: heavy;
+    color: #252525;
+    opacity: 0.55;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center;
+        gap: 40px; /* Increase gap for better spacing */
+    }
+
+    .image img {
+        width: 100%; /* Make the image span the full width */
+        max-width: 600px; /* Limit the maximum width */
+    }
+
+    .content {
+        padding-left: 0; /* Remove left padding */
+        text-align: center; /* Center-align text */
+    }
+
+    .hero h1 {
+        font-size: 40px; /* Reduce font size */
+        line-height: 60px; /* Adjust line height */
+    }
+
+    .hero p {
+        font-size: 20px; /* Reduce paragraph font size */
+    }
+
+    .hero button {
+        font-size: 14px; /* Adjust button font size */
+        padding: 10px 20px; /* Adjust button padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Reduce gap for smaller screens */
+    }
+
+    .image img {
+        max-width: 100%; /* Ensure the image scales within the viewport */
+    }
+
+    .content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px; /* Further reduce font size */
+        line-height: 50px; /* Adjust line height */
+    }
+
+    .hero p {
+        font-size: 18px; /* Further reduce paragraph font size */
+    }
+
+    .cards {
+        flex-direction: column;
+        gap: 20px; /* Reduce gap between cards */
+    }
+
+    .cards .card1 h2, .cards .card2 h2 {
+        font-size: 24px; /* Reduce card heading size */
+    }
+
+    .cards .card1 p, .cards .card2 p {
+        font-size: 14px; /* Reduce card paragraph size */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px; /* Further reduce font size for very small screens */
+        line-height: 40px; /* Adjust line height */
+    }
+
+    .hero p {
+        font-size: 16px; /* Adjust paragraph font size */
+    }
+
+    .hero button {
+        font-size: 12px; /* Adjust button font size */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    .cards .card1 h2, .cards .card2 h2 {
+        font-size: 20px; /* Further reduce card heading size */
+    }
+
+    .cards .card1 p, .cards .card2 p {
+        font-size: 12px; /* Further reduce card paragraph size */
+    }
+}
